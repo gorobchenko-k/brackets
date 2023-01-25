@@ -7,15 +7,9 @@ module.exports = function check(str, bracketsConfig) {
   }, {});
 
   let result = [];
-  // let firstBracket = true;
 
   for (let index = 0; index < str.length; index++) {
     let char = str[index];
-    // if (sameBracket.includes(char)) {
-    // char = firstBracket ? '[' : ']';
-    // firstBracket = !firstBracket;
-    // brackets[']'] = '[';
-    // }
     if (char in brackets && result.length > 0 && brackets[char] === result[result.length - 1]) {
       if (brackets[char] !== result.pop()) {
         return false;
